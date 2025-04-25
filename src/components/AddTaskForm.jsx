@@ -1,34 +1,28 @@
-import { useState } from 'react'
+import React, { useState } from 'react';
 
 function AddTaskForm({ onAdd }) {
-  const [title, setTitle] = useState('')
+  const [task, setTask] = useState('');
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    if (title.trim()) {
-      onAdd(title)
-      setTitle('')
+    e.preventDefault();
+    if (task) {
+      onAdd(task);
+      setTask('');
     }
-  }
+  };
 
   return (
-    <form onSubmit={handleSubmit} className="add-task-form">
+    <form className="add-task-form" onSubmit={handleSubmit}>
       <input
+        className="task-input"
         type="text"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-        placeholder="Add a new task"
-        className="todo-input"
+        value={task}
+        onChange={(e) => setTask(e.target.value)}
+        placeholder="Add new task..."
       />
-      <button
-        type="submit"
-        className="add-button"
-        
-      >
-        <i class="fa-solid fa-plus"></i>
-      </button>
+      <button className="add-button" type="submit">Add Task</button>
     </form>
-  )
+  );
 }
 
-export default AddTaskForm
+export default AddTaskForm;

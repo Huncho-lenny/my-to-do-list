@@ -1,15 +1,14 @@
-import TaskItem from './TaskItem'
+import React from 'react';
+import TaskItem from './TaskItem';
 
 function TaskList({ tasks, onDelete }) {
   return (
-    <ul className="todo-list">
-        {tasks.map((task) => (
-  <TaskItem key={task.id} task={task} onDelete={onDelete} />
-))}
-
-  
+    <ul className="task-list">
+      {tasks.map((task) => (
+        <TaskItem key={task.id} task={task} onDelete={onDelete} />
+      ))}
     </ul>
-  )
+  );
 }
 
-export default TaskList
+export default TaskList;
