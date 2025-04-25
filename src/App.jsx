@@ -11,7 +11,6 @@ function App() {
   const [error, setError] = useState(null)
 
 
-
   useEffect(() => {
     const fetchTasks = async () => {
       try {
